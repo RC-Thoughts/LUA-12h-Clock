@@ -20,7 +20,7 @@ local function printClock(width, height)
 	if(height > 25) then
 		lcd.drawText((150 - lcd.getTextWidth(FONT_BIG,timeDisp))/2,22,timeDisp,FONT_BIG)
 		else
-		lcd.drawText(150 - lcd.getTextWidth(FONT_BOLD,timeDisp),2,timeDisp,FONT_BOLD)
+		lcd.drawText(147 - lcd.getTextWidth(FONT_BOLD,timeDisp),2,timeDisp,FONT_BOLD)
 	end
 end
 ----------------------------------------------------------------------
