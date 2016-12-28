@@ -13,14 +13,16 @@
 --]]
 ----------------------------------------------------------------------
 -- Locals for the application
-local timeOrg, timeHour, timeDisp, timeSym
+local timeOrg, timeHour, timeSym
 ----------------------------------------------------------------------
 -- Draw the telemetry windows
 local function printClock(width, height)
-	if(height > 25) then
-		lcd.drawText((150 - lcd.getTextWidth(FONT_BIG,timeDisp))/2,22,timeDisp,FONT_BIG)
-		else
-		lcd.drawText(147 - lcd.getTextWidth(FONT_BOLD,timeDisp),2,timeDisp,FONT_BOLD)
+	if(timeDisp) then
+		if(height > 25) then
+			lcd.drawText((150 - lcd.getTextWidth(FONT_BIG,timeDisp))/2,22,timeDisp,FONT_BIG)
+			else
+			lcd.drawText(147 - lcd.getTextWidth(FONT_BOLD,timeDisp),2,timeDisp,FONT_BOLD)
+		end
 	end
 end
 ----------------------------------------------------------------------
@@ -49,5 +51,5 @@ local function init()
 	system.registerTelemetry(1,"Clock",0,printClock)
 end
 ----------------------------------------------------------------------
-ampmVersion = "v.1.0"
+ampmVersion = "1.0"
 return {init=init, loop=loop, author="RC-Thoughts", version=ampmVersion, name="RCT Clock"}
