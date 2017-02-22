@@ -11,6 +11,7 @@
 	Released under MIT-license by Tero @ RC-Thoughts.com 2016
 	---------------------------------------------------------
 --]]
+collectgarbage()
 ----------------------------------------------------------------------
 -- Locals for the application
 local timeOrg, timeHour, timeSym
@@ -51,5 +52,6 @@ local function init()
 	system.registerTelemetry(1,"Clock",0,printClock)
 end
 ----------------------------------------------------------------------
-ampmVersion = "1.0"
+ampmVersion = "1.1"
+collectgarbage()
 return {init=init, loop=loop, author="RC-Thoughts", version=ampmVersion, name="RCT Clock"}
