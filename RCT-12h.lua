@@ -45,6 +45,7 @@ local function loop()
 		timeSym = "pm"
 	end
 	timeDisp = ((string.format("%d:%02d:%02d", timeHour, timeOrg.min, timeOrg.sec, timeSym)).. " " .. timeSym)
+    collectgarbage()
 end
 ----------------------------------------------------------------------
 -- Application initialization
@@ -52,6 +53,6 @@ local function init()
 	system.registerTelemetry(1,"Clock",0,printClock)
 end
 ----------------------------------------------------------------------
-ampmVersion = "1.1"
+ampmVersion = "1.2"
 collectgarbage()
 return {init=init, loop=loop, author="RC-Thoughts", version=ampmVersion, name="RCT Clock"}
